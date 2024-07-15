@@ -1,9 +1,11 @@
 ---
-import { Icon } from "astro-icon/components";
+import HeaderIcon from "./HeaderIcon.astro";
 ---
 
-<header class="bg-slate-700 border-b border-b-slate-600 h-8 flex items-center">
-  <nav class="container mx-auto flex justify-end items-center">
-    <Icon name="lucide:github" class="w-5 h-5" />
+<header class="bg-slate-100 border-b border-b-slate-200 h-8 flex items-center">
+  <nav class="container mx-auto flex justify-end items-center px-2 gap-3">
+    <HeaderIcon icon="lucide:github" />
+    <HeaderIcon icon="lucide:twitter" />
+    <HeaderIcon icon="lucide:rss" />
   </nav>
 </header>

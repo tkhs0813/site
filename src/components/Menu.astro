@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon/components";
+
+type Props = {
+  menu: {
+    href: string;
+    name: string;
+    icon: string;
+  }[];
+};
+
+const { menu } = Astro.props;
+---
+
+{
+  menu.map(({ href, name, icon }) => {
+    const isOpen =
+      href === "/"
+        ? Astro.url.pathname === href
+        : Astro.url.pathname.includes(href);
+
+    return (
+      <a
+        href={href}
+        class={`flex items-center text-lg px-6 py-2 rounded-lg ${isOpen ? "bg-slate-200" : "hover:bg-slate-100"}`}
+      >
+        <Icon name={icon} class="mr-2" />
+        {name}
+      </a>
+    );
+  })
+}
